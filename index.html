@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Kenia Velasco — Computer Science × Digital Design portfolio." />
+  <title>Kenia Velasco — CS × Design Portfolio</title>
+
+  <meta property="og:title" content="Kenia Velasco — Portfolio" />
+  <meta property="og:description" content="Computer Science + Digital Design portfolio." />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Top HUD -->
+  <header class="hud" aria-label="Top controls">
+    <div class="hud__left">
+      <span class="badge">⋆౨ৎ˚⟡˖ ࣪</span>
+      <span class="hud__clock" id="clock" aria-label="Current time"></span>
+    </div>
+
+    <div class="hud__right">
+      <button class="btn" id="toggleClean" type="button" aria-pressed="false" title="Toggle clean mode for job applications">
+        Clean Mode
+      </button>
+       <!--  <button class="btn" id="toggleReduceMotion" type="button" aria-pressed="false" title="Reduce motion">
+        Reduce Motion
+      </button>-->
+      <button class="btn primary" id="copyLink" type="button" title="Copy portfolio link">
+        Copy Link
+      </button>
+    </div>
+  </header>
+
+  <!-- Desktop -->
+  <main id="content" class="desktop" role="main">
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+    <!-- ONE-PAGE SECTION: Hero + About + Collage + Resume -->
+    <section class="onepage" id="about">
+      <div class="onepage__inner">
+
+        <!-- HERO -->
+        <section class="heroPage" aria-label="Hero section">
+          <div class="heroPage__left">
+            <div class="brandline">
+              <span class="brandline__name">Kenia Velasco</span>
+              <span class="brandline__year">May 2026</span>
+            </div>
+
+            <h1 class="heroTitle">
+              <span>Hello,</span>
+              <span>I’m <span class="accent">Kenia!</span></span>
+            </h1>
+
+            <p class="lede">
+              I’m a Computer Science major with a strong digital design + UI/UX background.
+              I love building interfaces that feel playful, polished, and accessible.
+            </p>
+
+            <div class="chips" aria-label="Highlights">
+              <span class="chip">CS Major</span>
+              <span class="chip">UX/UI</span>
+              <span class="chip">Frontend</span>
+             <span class="chip">Website Development</span>
+              <span class="chip">Design Systems</span>
+            </div>
+
+            <div class="cta-row">
+              <button class="btn primary" type="button" data-open="win-projects">Open Projects</button>
+              <button class="btn" type="button" data-open="win-design">Open Design</button>
+              <button class="btn" type="button" data-open="win-skills">Open Skills</button>
+              <a class="btn" href="#resume">Jump to Resume</a>
+            </div>
+
+            <p class="muted tiny">
+              For job applications: toggle <strong>Clean Mode</strong> (top right).
+            </p>
+          </div>
+
+          <figure class="heroPage__right">
+            <!-- Choose one image as your hero and name it kenia-hero.jpg -->
+            <img src="images/kenia-hero.JPG" alt="Kenia outdoors with friends" />
+            
+            <!-- <div class="outlineText" aria-hidden="true">
+              class of <span>2026</span>
+            </div>-->
+
+            <span class="sticker star" aria-hidden="true">✦</span>
+            <span class="sticker burst" aria-hidden="true">✷</span>
+          </figure>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="aboutBlock" id="about-me" aria-label="About me">
+          <div class="aboutBlock__left">
+            <h2 class="h2">About Me</h2>
+            <p class="muted">
+              I’m a first-generation college student pursuing a B.S. in Computer Science, with an emphasis in design and UX/UI.
+              I’m passionate about building inclusive technology and crafting interfaces that feel human while celebrating human creativity.
+            </p>
+
+            <ul class="list">
+              <li><strong>Interests:</strong> UI engineering, accessibility, interactive design, HCI practices.</li>
+              <li><strong>Strength:</strong> I can design it and build it! </li>
+              <li><strong>Currently:</strong> looking for internships / early career roles.</li>
+            </ul>
+
+            <div class="miniLinks">
+              <a class="btn" href="https://github.com/qennya" target="_blank" rel="noreferrer">GitHub</a>
+              <a class="btn" href="https://www.linkedin.com/in/keniavelasco/" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a class="btn" href="mailto:velascokenia22@gmail.com">Email</a>
+              <button class="btn primary" type="button" data-open="win-contact">Contact</button>
+            </div>
+          </div>
+
+          <div class="aboutBlock__right card">
+            <h3 class="h3">Quick Facts</h3>
+            <div class="facts">
+              <div class="fact">
+                <span class="fact__k">Name</span><span class="fact__v">Kenia Velasco</span>
+              </div>
+              <div class="fact">
+                <span class="fact__k">Graduation</span><span class="fact__v">May 2026</span>
+              </div>
+              <div class="fact">
+                <span class="fact__k">Focus</span><span class="fact__v">CS + Design</span>
+              </div>
+              <div class="fact">
+                <span class="fact__k">Inspiration</span><span class="fact__v">Y2K / Modern cyberspace</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- COLLAGE -->
+        <section class="collage" id="collage" aria-label="Photo collage">
+          <div class="collage__header">
+            <h2 class="h2">Collage</h2>
+            <p class="muted">A peek into my life, between community and early begginings.</p>
+          </div>
+
+          <div class="collageGrid">
+            <figure class="polaroid p1">
+              <img src="images/kenia-group.png" alt="Group photo in front of a College of Science building sign" />
+              <figcaption>✦ Cal Poly Pomona, College of Science ✦ sheCodes club</figcaption>
+            </figure>
+
+            <figure class="polaroid p2">
+              <img src="images/kenia-friends.jpg" alt="Kenia with two friends outdoors" />
+              <figcaption>✦ sheBoard 2025</figcaption>
+            </figure>
+
+            <figure class="polaroid p3">
+              <img src="images/kenia-childhood1.jpg" alt="Childhood photo holding a baby" />
+              <figcaption>✦ Big sister ✦ Immigrated to USA </figcaption>
+            </figure>
+
+            <figure class="polaroid p4">
+              <img src="images/kenia-childhood2.jpg" alt="Childhood photo playing on a handheld game device on a couch" />
+              <figcaption>✦ Passion for gaming and technology early on </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <!-- RESUME -->
+        <section class="resumePage" id="resume" aria-label="Resume">
+          <div class="resumePage__head">
+            <h2 class="h2">Resume</h2>
+            <div class="resumePage__buttons">
+              <button class="btn" type="button" id="printResume">Print / Save PDF</button>
+              <button class="btn primary" type="button" data-open="win-contact">Contact</button>
+            </div>
+          </div>
+
+          <div class="resumePage__grid">
+            <div class="card">
+              <h3 class="h3">Education</h3>
+              <p><strong>California Polytechinic University, Pomona</strong> — B.S. Computer Science</p>
+              <p class="muted tiny">Expected: May 2026</p>
+              <p>Relevant: Web Dev, Mobile Dev, Human Computer Interaction, Design, ML, Databases...</p>
+            </div>
+
+            <div class="card">
+              <h3 class="h3">Experience</h3>
+              <ul >
+                <li><strong>Computer Camp Counselor</strong> — Cal Poly Pomona (2023–2025): Taught Object-Oriented Java programming, 3D modeling, mobile game development, and 3D animation through
+developed lesson plans to diverse groups of young students ages 10 to 15.</li>
+                <break>
+                <li><strong>NSF SPIRES Research Scholar</strong> —  National Science Society (2024–2025): Engaged in research with Dr. Ting Ting Chen on machine learning applications for Mobility Scooters, driving
+improvements in autonomous riding safety assessments, contributing as part of a mobile development team to enhancing user experience through HCI techniques.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h3 class="h3">Projects</h3>
+              <ul >
+                <li><strong>PetMinder</strong>: PetMinder is an Android app that helps you keep track of all your pet care needs — from feeding and walks to grooming, medications, and reminders for daily routines.</li>
+                <break>
+                <li><strong>Cat vs Dog Image Classification</strong>: Collaborated with a partner to design and implement an image categorizer in Python, utilizing TensorFlow and deep
+learning networks to build and train a neural network model for classifying cat vs. dog images.
+</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h3 class="h3">Skills</h3>
+              <p><strong>Programming:</strong> JS/TS, Python, Java</p>
+              <p><strong>Design:</strong> Figma, Brand Identity, Typography, systems</p>
+              <p><strong>Tools:</strong> Git/GitHub, VS Code, Android Studio</p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+    <!-- Desktop icons (open windows)
+    <section class="dock" aria-label="Desktop icons">
+     <button class="icon" data-open="win-projects" type="button">
+        <span class="icon__glyph">💾</span>
+        <span class="icon__label">Projects</span>
+      </button>
+
+      <button class="icon" data-open="win-design" type="button">
+        <span class="icon__glyph">🖼️</span>
+        <span class="icon__label">Design</span>
+      </button>
+
+      <button class="icon" data-open="win-skills" type="button">
+        <span class="icon__glyph">🧪</span>
+        <span class="icon__label">Skills</span>
+      </button>
+
+      <button class="icon" data-open="win-contact" type="button">
+        <span class="icon__glyph">📨</span>
+        <span class="icon__label">Contact</span>
+      </button>
+
+      <a class="icon" href="#resume">
+        <span class="icon__glyph">📄</span>
+        <span class="icon__label">Resume</span>
+      </a>
+    </section> -->
+
+    <!-- WINDOWS -->
+
+    <!-- Projects -->
+    <section class="window" id="win-projects" role="dialog" aria-label="CS Projects" data-window>
+      <div class="titlebar" data-drag>
+        <div class="titlebar__left">
+          <span class="titlebar__dot"></span>
+          <span class="titlebar__title">PROJECTS–CS.zip</span>
+        </div>
+        <div class="titlebar__right">
+          <button class="titlebar__btn" data-minimize aria-label="Minimize">–</button>
+          <button class="titlebar__btn" data-maximize aria-label="Maximize">□</button>
+          <button class="titlebar__btn danger" data-close aria-label="Close">×</button>
+        </div>
+      </div>
+
+      <div class="window__content" id="projects">
+        <div class="toolbar">
+          <input id="projectSearch" class="input" type="search" placeholder="Search projects (e.g., react, ai, java)..." />
+          <select id="projectFilter" class="input" aria-label="Filter projects">
+            <option value="all">All</option>
+            <option value="frontend">Frontend</option>
+            <option value="backend">Backend</option>
+            <option value="ai">AI / Data</option>
+            <option value="systems">Systems</option>
+            <option value="school">Coursework</option>
+          </select>
+        </div>
+
+        <div class="grid" id="projectGrid" aria-label="Project cards"></div>
+      </div>
+    </section>
+
+    <!-- Design -->
+    <section class="window" id="win-design" role="dialog" aria-label="Design Work" data-window>
+      <div class="titlebar" data-drag>
+        <div class="titlebar__left">
+          <span class="titlebar__dot pink"></span>
+          <span class="titlebar__title">DESIGN–gallery.png</span>
+        </div>
+        <div class="titlebar__right">
+          <button class="titlebar__btn" data-minimize aria-label="Minimize">–</button>
+          <button class="titlebar__btn" data-maximize aria-label="Maximize">□</button>
+          <button class="titlebar__btn danger" data-close aria-label="Close">×</button>
+        </div>
+      </div>
+
+      <div class="window__content" id="design">
+        <p class="muted">
+          Add images of your designs (or link to Behance/Figma). These tiles support thumbnails.
+        </p>
+
+        <div class="masonry" id="designGrid" aria-label="Design tiles"></div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="window" id="win-skills" role="dialog" aria-label="Skills" data-window>
+      <div class="titlebar" data-drag>
+        <div class="titlebar__left">
+          <span class="titlebar__dot"></span>
+          <span class="titlebar__title">SKILLS–readme.txt</span>
+        </div>
+        <div class="titlebar__right">
+          <button class="titlebar__btn" data-minimize aria-label="Minimize">–</button>
+          <button class="titlebar__btn" data-maximize aria-label="Maximize">□</button>
+          <button class="titlebar__btn danger" data-close aria-label="Close">×</button>
+        </div>
+      </div>
+
+      <div class="window__content">
+        <div class="skill-sections">
+          <div class="card">
+            <h2 class="h2">Computer Science</h2>
+            <div class="pills" id="skillsCS"></div>
+          </div>
+
+          <div class="card">
+            <h2 class="h2">Design</h2>
+            <div class="pills" id="skillsDesign"></div>
+          </div>
+
+          <div class="card">
+            <h2 class="h2">Tools</h2>
+            <div class="pills" id="skillsTools"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="window" id="win-contact" role="dialog" aria-label="Contact" data-window>
+      <div class="titlebar" data-drag>
+        <div class="titlebar__left">
+          <span class="titlebar__dot pink"></span>
+          <span class="titlebar__title">CONTACT–send_message.mail</span>
+        </div>
+        <div class="titlebar__right">
+          <button class="titlebar__btn" data-minimize aria-label="Minimize">–</button>
+          <button class="titlebar__btn" data-maximize aria-label="Maximize">□</button>
+          <button class="titlebar__btn danger" data-close aria-label="Close">×</button>
+        </div>
+      </div>
+
+      <div class="window__content">
+        <div class="two-col">
+          <div>
+            <h2 class="h2">Let’s connect</h2>
+            <p class="muted">Best for recruiters: keep it simple and direct.</p>
+
+            <div class="socials">
+              <a href="mailto:you@email.com" class="social">
+                <span class="social__k">Email</span><span class="social__v">you@email.com</span>
+              </a>
+              <a href="https://github.com/" target="_blank" rel="noreferrer" class="social">
+                <span class="social__k">GitHub</span><span class="social__v">@yourhandle</span>
+              </a>
+              <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" class="social">
+                <span class="social__k">LinkedIn</span><span class="social__v">Kenia Velasco</span>
+              </a>
+            </div>
+          </div>
+
+          <form class="card form" id="contactForm">
+            <label class="label">
+              Your name
+              <input class="input" name="name" autocomplete="name" placeholder="Recruiter / Hiring Manager" />
+            </label>
+
+            <label class="label">
+              Your email
+              <input class="input" name="email" type="email" autocomplete="email" placeholder="name@company.com" />
+            </label>
+
+            <label class="label">
+              Message
+              <textarea class="input" name="message" rows="4" placeholder="Hi! We’d like to chat about..."></textarea>
+            </label>
+
+            <button class="btn primary" type="submit">Generate Email Draft</button>
+            <p class="tiny muted" id="emailDraftHint"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span class="tiny muted">© <span id="year"></span> Kenia Velasco • Built with HTML/CSS/JS</span>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
