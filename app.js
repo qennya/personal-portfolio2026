@@ -2,24 +2,33 @@
 const DATA = {
   projects: [
     {
+      id: "petminder",
       title: "Pet Care Planner",
       tag: "Full-stack",
       stack: ["Dart(Flutter)", "Firebase", "Figma"],
       desc: "Andriod Mobile App that helps pet owners manage their pets' care routines.",
+      longDesc:
+        "PetMinder helps owners track feeding, walks, grooming, meds, and recurring reminders. I focused on a clean UX, scalable data model, and notification-friendly flows.",
+      images: [
+        "images/projects/petminder-1.png",
+        "images/projects/petminder-2.png",
+        "images/projects/petminder-3.png"
+      ],
       links: {
         github: "https://github.com/Solares10/PetMinder2.0",
         Figma: "https://www.figma.com/design/BkpyT9cSooidNGhTL6wtS9/PetMinder---Mobile-App-Project?node-id=0-1&p=f&t=NBCxSh4SSULl6CKr-0"
       }
     },
     {
-      title: "JavaFX Dating Sim Prototype",
-      tag: "school",
-      stack: ["Java", "JavaFX", "Scene Builder"],
+      id: "dattingsim",
+      title: "Dart Dating Simulator",
+      tag: "Passion Project",
+      stack: ["Android Studio", "Dart", "Scene Builder"],
       desc: "Minimal yet polished simulation UI with branching events and save/load state.",
       links: { github: "https://github.com/yourhandle/javafx-datingsim" }
     },
     {
-      title: "Realtime Chat App",
+      title: "Mobility Scooter",
       tag: "backend",
       stack: ["Node.js", "WebSockets", "Postgres"],
       desc: "A reliable chat service with auth, persistence, and a slick UI.",
@@ -176,17 +185,41 @@ function renderProjects(list){
     }).join("");
 
     return `
-      <article class="project">
+      <article class="project" role="button" tabindex="0" data-project-id="${escapeAttr(p.id || p.title)}">
         <div class="project__top">
           <h3 class="project__title">${escapeHtml(p.title)}</h3>
           <div>${tags}</div>
         </div>
         <p class="project__desc">${escapeHtml(p.desc)}</p>
-        <div class="project__links">${links}</div>
+
+        <div class="project__links">
+          <button class="btn primary" type="button" data-view-project="${escapeAttr(p.id || p.title)}">View details</button>
+          ${links}
+        </div>
       </article>
     `;
   }).join("");
+
+  // click handlers (card click OR button click)
+  $$("[data-view-project]").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      openProjectDetail(btn.dataset.viewProject);
+    });
+  });
+
+  $$("[data-project-id]").forEach(card => {
+    const id = card.dataset.projectId;
+    card.addEventListener("click", () => openProjectDetail(id));
+    card.addEventListener("keydown", (e) => {
+      if(e.key === "Enter" || e.key === " "){
+        e.preventDefault();
+        openProjectDetail(id);
+      }
+    });
+  });
 }
+
 
 function renderDesign(){
   const grid = $("#designGrid");
@@ -207,6 +240,89 @@ function renderDesign(){
     </article>
   `).join("");
 }
+
+function findProjectById(id){
+  // supports using id OR title as fallback
+  return DATA.projects.find(p => (p.id && p.id === id) || p.title === id);
+}
+
+function openProjectDetail(id){
+  const p = findProjectById(id);
+  if(!p){
+    openWindow("win-project-detail");
+    $("#projectDetailContent").innerHTML = `<p class="muted">Project not found.</p>`;
+    $("#projectDetailTitlebar").textContent = `PROJECT–not_found.txt`;
+    return;
+  }
+
+  $("#projectDetailTitlebar").textContent = `PROJECT–${p.title}.txt`;
+
+  const images = (p.images || []).filter(Boolean);
+  const gallery = images.length
+    ? `
+      <div class="projGallery" aria-label="Project image gallery">
+        ${images.map(src => `
+          <button class="projGallery__item" type="button">
+            <img src="${escapeAttr(src)}" alt="${escapeAttr(p.title)} screenshot" loading="lazy">
+          </button>
+        `).join("")}
+      </div>
+      <p class="tiny muted">Tip: click an image to view larger.</p>
+    `
+    : `<p class="muted tiny">No images added yet. Add <code>images: []</code> in DATA.projects.</p>`;
+
+  const links = Object.entries(p.links || {}).map(([k,v]) => {
+    const label = k === "github" ? "GitHub" : (k === "demo" ? "Live Demo" : k);
+    return `<a class="btn" href="${escapeAttr(v)}" target="_blank" rel="noreferrer">${escapeHtml(label)}</a>`;
+  }).join("");
+
+  const stack = (p.stack || []).map(s => `<span class="pill">${escapeHtml(s)}</span>`).join("");
+
+  $("#projectDetailContent").innerHTML = `
+    <div class="projDetail">
+      <div class="projDetail__head">
+        <div>
+          <h2 class="h2" style="margin:0;">${escapeHtml(p.title)}</h2>
+          <p class="muted" style="margin-top:6px;">${escapeHtml(p.longDesc || p.desc || "")}</p>
+        </div>
+
+        <div class="projDetail__meta card">
+          <div class="tiny muted">Category</div>
+          <div style="margin-top:4px;"><span class="tag">${escapeHtml((p.tag || "project").toUpperCase())}</span></div>
+
+          <div class="tiny muted" style="margin-top:10px;">Tech</div>
+          <div class="pills" style="margin-top:6px;">${stack || `<span class="muted tiny">—</span>`}</div>
+
+          <div style="margin-top:12px; display:flex; gap:8px; flex-wrap:wrap;">
+            ${links || ""}
+          </div>
+        </div>
+      </div>
+
+      ${gallery}
+
+      <div class="card" style="margin-top:12px;">
+        <h3 class="h3">What I did</h3>
+        <ul class="list">
+          <li>Designed the UX flow and visuals</li>
+          <li>Built core features + state</li>
+          <li>Focused on accessibility + clean UI</li>
+        </ul>
+        <p class="tiny muted">Customize this per project (add a <code>bullets</code> array if you want).</p>
+      </div>
+    </div>
+  `;
+
+  // lightbox-ish: click image opens in new tab OR simple “zoom” modal
+  // Here: quick zoom by opening the image in a new tab
+  $$(".projGallery__item img", $("#projectDetailContent")).forEach(img => {
+    img.parentElement.addEventListener("click", () => window.open(img.src, "_blank"));
+  });
+
+  openWindow("win-project-detail");
+}
+
+
 
 function escapeHtml(str){
   return String(str)

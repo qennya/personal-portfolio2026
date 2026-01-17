@@ -504,40 +504,98 @@ body.reduce-motion *{
   padding: 6px 2px;
 }
 
-.collageGrid{
-  margin-top: 10px;
-  display:grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 12px;
+/* COLLAGE */
+/* COLLAGE — Postcard Grid (3 × 2) */
+.collage{
+  margin-top: 14px;
+  max-width: 1120px;           /* keeps it tight */
+  margin-left: auto;
+  margin-right: auto;
 }
 
+.collage__header{
+  display:flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 6px 2px;
+}
+
+.collageGrid{
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+/* postcard / photo print */
 .polaroid{
-  margin:0;
-  border:1px solid var(--border);
   background: rgba(255,255,255,.92);
   border-radius: 18px;
-  padding: 10px 10px 12px;
-  box-shadow: 0 14px 34px rgba(0,0,0,.10);
-}
-.polaroid img{
-  width:100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 14px;
-  display:block;
-  border:1px solid rgba(0,0,0,.10);
-}
-.polaroid figcaption{
-  margin-top: 10px;
-  font-size: 12px;
-  color: var(--muted);
+  padding: 8px 8px 10px;
+  border: 1px solid rgba(0,0,0,.10);
+  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+  position: relative;
+  transition: transform .14s ease;
 }
 
-/* scrapbook feel */
-.p1{ grid-column: 1 / span 7; transform: rotate(-.6deg); }
-.p2{ grid-column: 8 / span 5; transform: rotate(.8deg); }
-.p3{ grid-column: 1 / span 6; transform: rotate(.5deg); }
-.p4{ grid-column: 7 / span 6; transform: rotate(-.7deg); }
+.polaroid:hover{
+  transform: translateY(-2px);
+}
+
+.polaroid img{
+  width: 100%;
+  aspect-ratio: 10 / 8;        /* postcard */
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  
+  border: 1px solid rgba(0,0,0,.10);
+  background: rgba(0,0,0,.03);
+}
+
+.polaroid figcaption{
+  margin-top: 8px;
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.35;
+  font-family: ui-rounded, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+}
+
+/* subtle tape detail (less scrapbook, more curated) */
+.polaroid::before{
+  content:"";
+  position:absolute;
+  top:-7px; left: 16px;
+  width: 56px; height: 16px;
+  background: rgba(153,255,173,.30);
+  border: 1px solid rgba(0,0,0,.10);
+  border-radius: 6px;
+  transform: rotate(-4deg);
+}
+
+
+.polaroid::after{
+  content:"✦";
+  position:absolute;
+  top: 10px; right: 14px;
+  font-size: 14px;
+  color: rgba(242,118,151,.85);
+  opacity: .9;
+}
+
+/* scrapbook tilt */
+.p1{ --tilt: -1.2deg; }
+.p2{ --tilt:  1.0deg; }
+.p3{ --tilt:  0.6deg; }
+.p4{ --tilt: -0.8deg; }
+
+@media (max-width: 900px){
+  .collageGrid{ columns: 1; } /* phone/tablet = big */
+}
+
+
 
 /* RESUME PAGE */
 .resumePage{ margin-top: 14px; }
@@ -561,8 +619,6 @@ body.reduce-motion *{
   .heroPage{ grid-template-columns: 1fr; }
   .heroTitle{ font-size: 44px; }
   .aboutBlock{ grid-template-columns: 1fr; }
-  .collageGrid{ grid-template-columns: 1fr; }
-  .p1,.p2,.p3,.p4{ grid-column: auto; transform:none; }
   .resumePage__grid{ grid-template-columns: 1fr; }
   .masonry{ columns: 1; }
   .grid{ grid-template-columns: 1fr; }
@@ -576,4 +632,44 @@ body.reduce-motion *{
   body{ background:#fff; color:#000; }
   .window{ display:none !important; }
   .onepage__inner{ box-shadow:none; border:1px solid #ccc; }
+}
+
+.projDetail__head{
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: 14px;
+  align-items: start;
+}
+
+@media (max-width: 900px){
+  .projDetail__head{ grid-template-columns: 1fr; }
+}
+
+.projGallery{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+
+@media (max-width: 900px){
+  .projGallery{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.projGallery__item{
+  border: 1px solid rgba(0,0,0,0.10);
+  background: rgba(255,255,255,0.65);
+  border-radius: 14px;
+  padding: 8px;
+  cursor: pointer;
+  transition: transform 140ms ease;
+}
+.projGallery__item:hover{ transform: translateY(-2px); }
+
+.projGallery__item img{
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
 }
