@@ -75,12 +75,7 @@
               <button class="btn primary" type="button" data-open="win-projects">Open Projects</button>
               <button class="btn" type="button" data-open="win-design">Open Design</button>
               <button class="btn" type="button" data-open="win-skills">Open Skills</button>
-              <a class="btn" href="#resume">Jump to Resume</a>
             </div>
-
-            <p class="muted tiny">
-              For job applications: toggle <strong>Clean Mode</strong> (top right).
-            </p>
           </div>
 
           <figure class="heroPage__right">
@@ -99,7 +94,7 @@
         <!-- ABOUT -->
         <section class="aboutBlock" id="about-me" aria-label="About me">
           <div class="aboutBlock__left">
-            <h2 class="h2">About Me</h2>
+            <h2 class="h1">About Me</h2>
             <p class="muted">
               I’m a first-generation college student pursuing a B.S. in Computer Science, with an emphasis in design and UX/UI.
               I’m passionate about building inclusive technology and crafting interfaces that feel human while celebrating human creativity.
@@ -165,59 +160,28 @@
           </div>
         </section>
 
-        <!-- RESUME -->
-        <section class="resumePage" id="resume" aria-label="Resume">
-          <div class="resumePage__head">
-            <h2 class="h2">Resume</h2>
-            <div class="resumePage__buttons">
-              <button class="btn" type="button" id="printResume">Print / Save PDF</button>
-              <button class="btn primary" type="button" data-open="win-contact">Contact</button>
-            </div>
-          </div>
+        <!-- RESUME DOWNLOAD -->
+        <section class="resumeStrip" id="resume" aria-label="Resume download">
+  <div class="resumeStrip__inner card">
+    <div>
+      <h2 class="h2" style="margin:0;">Resume</h2>
+      <p class="muted tiny" style="margin:6px 0 0;">
+        B.S. Computer Science • May 2026
+      </p>
+    </div>
 
-          <div class="resumePage__grid">
-            <div class="card">
-              <h3 class="h3">Education</h3>
-              <p><strong>California Polytechinic University, Pomona</strong> — B.S. Computer Science</p>
-              <p class="muted tiny">Expected: May 2026</p>
-              <p>Relevant: Web Dev, Mobile Dev, Human Computer Interaction, Design, ML, Databases...</p>
-            </div>
+    <div class="resumeStrip__actions">
+      <a class="btn primary"
+         href="files/Spring2025_ResumeKenia.docx.pdf"
+         download="KeniaVelasco_Resume_2026.pdf">
+        Download Resume (PDF)
+      </a>
 
-            <div class="card">
-              <h3 class="h3">Experience</h3>
-              <ul >
-                <li><strong>Computer Camp Counselor</strong> — Cal Poly Pomona (2023–2025): Taught Object-Oriented Java programming, 3D modeling, mobile game development, and 3D animation through
-developed lesson plans to diverse groups of young students ages 10 to 15.</li>
-                <break>
-                <li><strong>NSF SPIRES Research Scholar</strong> —  National Science Society (2024–2025): Engaged in research with Dr. Ting Ting Chen on machine learning applications for Mobility Scooters, driving
-improvements in autonomous riding safety assessments, contributing as part of a mobile development team to enhancing user experience through HCI techniques.</li>
-              </ul>
-            </div>
+      <button class="btn" type="button" data-open="win-contact">Contact</button>
+    </div>
+  </div>
+</section>
 
-            <div class="card">
-              <h3 class="h3">Projects</h3>
-              <ul >
-                <li><strong>PetMinder</strong>: PetMinder is an Android app that helps you keep track of all your pet care needs — from feeding and walks to grooming, medications, and reminders for daily routines.</li>
-                <break>
-                <li><strong>Cat vs Dog Image Classification</strong>: Collaborated with a partner to design and implement an image categorizer in Python, utilizing TensorFlow and deep
-learning networks to build and train a neural network model for classifying cat vs. dog images.
-</li>
-              </ul>
-              <button class="btn primary" type="button" data-open="win-projects">Open Projects</button>
-
-            </div>
-
-            <div class="card">
-              <h3 class="h3">Skills</h3>
-              <p><strong>Programming:</strong> JS/TS, Python, Java</p>
-              <p><strong>Design:</strong> Figma, Brand Identity, Typography, systems</p>
-              <p><strong>Tools:</strong> Git/GitHub, VS Code, Android Studio</p>
-            </div>
-          </div>
-        </section>
-
-      </div>
-    </section>
 
     <!-- WINDOWS -->
 

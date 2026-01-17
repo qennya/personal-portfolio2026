@@ -523,17 +523,17 @@ body.reduce-motion *{
 }
 
 .collageGrid{
-  margin-top: 12px;
+  margin-top: 10px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
+  gap: 6px;
 }
 
 /* postcard / photo print */
 .polaroid{
   background: rgba(255,255,255,.92);
   border-radius: 18px;
-  padding: 8px 8px 10px;
+  padding: 6px; /* smaller padding = bigger photo */
   border: 1px solid rgba(0,0,0,.10);
   box-shadow: 0 10px 24px rgba(0,0,0,.08);
   position: relative;
@@ -546,9 +546,9 @@ body.reduce-motion *{
 
 .polaroid img{
   width: 100%;
-  aspect-ratio: 10 / 8;        /* postcard */
+  aspect-ratio: 4 / 3;        /* postcard */
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 12px;
   display: block;
   
   border: 1px solid rgba(0,0,0,.10);
@@ -672,4 +672,59 @@ body.reduce-motion *{
   object-fit: cover;
   border-radius: 12px;
   display: block;
+}
+
+.resumeStrip{ margin-top: 14px; }
+.resumeStrip__inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap: 12px;
+  flex-wrap:wrap;
+}
+.resumeStrip__actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.resumeStrip__title{ font-size: 15px; font-weight: 700; }
+
+.onepage__inner > section{
+  margin-bottom: 28px;
+}
+
+/* FORCE COLLAGE: 3 big square photos in ONE row */
+.collageGrid{
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 6px !important;
+  margin-top: 10px !important;
+}
+
+/* cancel old grid-column hacks, keep hover */
+.polaroid.p1,
+.polaroid.p2,
+.polaroid.p3{
+  grid-column: auto !important;
+}
+
+/* neutralize scrapbook rotation safely */
+.polaroid{
+  --tilt: 0deg;
+  padding: 6px !important;
+}
+
+.polaroid:hover{
+  transform: translateY(-2px);
+}
+
+/* square images */
+.polaroid img{
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
+}
+
+/* tighter caption */
+.polaroid figcaption{
+  margin-top: 6px !important;
 }
