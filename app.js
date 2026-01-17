@@ -3,16 +3,18 @@ const DATA = {
   projects: [
     {
       id: "petminder",
-      title: "Pet Care Planner",
+      title: "PetMinder",
       tag: "Full-stack",
-      stack: ["Dart(Flutter)", "Firebase", "Figma"],
+      stack: ["Dart (Flutter)", "Firebase", "Figma"],
       desc: "Andriod Mobile App that helps pet owners manage their pets' care routines.",
-      longDesc:
-        "PetMinder helps owners track feeding, walks, grooming, meds, and recurring reminders. I focused on a clean UX, scalable data model, and notification-friendly flows.",
+     longDesc: [
+      "PetMinder helps owners track feeding, walks, grooming, meds, and recurring reminders. I focused on a clean UX, scalable data model, and notification-friendly flows.",
+      "Main features include task scheduling, pet profiles, and task tracking.",
+      "Timeline: 2 weeks for design + prototyping, 4 weeks for development and testing.",],
       images: [
-        "images/projects/petminder-1.png",
-        "images/projects/petminder-2.png",
-        "images/projects/petminder-3.png"
+        "images/projects/createnewpet.gif",
+        "images/projects/createnewtask.gif",
+        "images/projects/deletefeatures.gif"
       ],
       links: {
         github: "https://github.com/Solares10/PetMinder2.0",
@@ -283,7 +285,11 @@ function openProjectDetail(id){
       <div class="projDetail__head">
         <div>
           <h2 class="h2" style="margin:0;">${escapeHtml(p.title)}</h2>
-          <p class="muted" style="margin-top:6px;">${escapeHtml(p.longDesc || p.desc || "")}</p>
+          <p class="muted" style="margin-top:6px;">${escapeHtml(p.desc || "")}</p>
+          <div class="muted">
+  ${p.longDesc.map(t => `<p>${escapeHtml(t)}</p>`).join("")}
+</div>
+
         </div>
 
         <div class="projDetail__meta card">
@@ -477,5 +483,7 @@ function init(){
   // If you WANT one to start open, uncomment:
   // openWindow("win-projects");
 }
+
+
 
 document.addEventListener("DOMContentLoaded", init);
