@@ -1,10 +1,29 @@
 // ====== Customize here ======
 const DATA = {
   projects: [
+        {
+      id: "MobilityScooter Research",
+      title: "Mobility Scooter NHS Research",
+      tag: "Frontend",
+      stack: ["Kotlin","Mobile UX/UI"],
+       desc: "Mobility Scooter Mobile Application was built to improve the safety of mobility scooter users by analyzing their driving behaviors and providing real-time feedback.",
+      longDesc: ["While a mobility scooter project was being developed for the NHS, I conducted paid user research with local hospitals to inform design decisions. I created multiple surverys and conducted patient interviews to gather insights on user needs, pain points, and preferences regarding mobility scooter usage and safety. I was also responsible for analyzing the collected data and presenting findings to the design and development teams to inform the app's features and user experience.",
+      "This research was presented at the Cal Poly Pomona Undergraduate Research Symposium in 2025 and is currently under privacy restriction!",],
+        images: [
+        "images/projects/research/poster.jpg",
+        "images/projects/research/screen.png",
+        "images/projects/research/usermanual.png",
+      ],
+      links: {
+        Manual: "files/Mobility_Scooter_UserManual.pdf",
+      }
+
+    },
+    
     {
       id: "petminder",
       title: "PetMinder",
-      tag: "Full-stack",
+      tag: "FullStack",
       stack: ["Dart (Flutter)", "Firebase", "Figma"],
       desc: "Andriod Mobile App that helps pet owners manage their pets' care routines.",
      longDesc: [
@@ -23,34 +42,25 @@ const DATA = {
     },
     {
       id: "dattingsim",
-      title: "Dart Dating Simulator",
-      tag: "Passion Project",
-      stack: ["Android Studio", "Dart", "Scene Builder"],
-      desc: "Minimal yet polished simulation UI with branching events and save/load state.",
-      links: { github: "https://github.com/yourhandle/javafx-datingsim" }
+      title: "Love Love Green Camp",
+      tag: "Full Stack",
+      stack: ["Android Studio","C++", "Dart", "Flutter"],
+      desc: "Simple dating game created to learn game development and create art beyond a lecture hall!",
+      longDesc: ["This game is currently in-progress and has a placeholder name of Love Love Green Camp. This project takes heavy inpiration from early 2000's dating sims like Tokimeki Memorial Girl with its coming of age storyline/setting and playthrough structure.",
+        "This is a solo development project, timeline to complete this project is TBD.",],
+      images: [
+        "images/projects/datingsim/bell.png",
+        "images/projects/datingsim/startscreen.png"
+      ],
+      links: { github: "https://github.com/qennya/lovelovegreencamp" }
     },
-    {
-      title: "Mobility Scooter",
-      tag: "backend",
-      stack: ["Node.js", "WebSockets", "Postgres"],
-      desc: "A reliable chat service with auth, persistence, and a slick UI.",
-      links: { github: "https://github.com/yourhandle/chat-app" }
-    },
-    {
-      title: "Portfolio OS Interface",
-      tag: "frontend",
-      stack: ["HTML", "CSS", "JS"],
-      desc: "Desktop windows + one-page hero/resume layout for job applications.",
-      links: { github: "https://github.com/yourhandle/portfolio" }
-    }
   ],
 
   // Add your own design images here (optional)
   design: [
-    { title: "Y2K Poster Series", meta: "Typography + neon gradients", link: "https://behance.net/", image: "images/design1.jpg" },
-    { title: "UI Kit — Green/Pink", meta: "Components + tokens", link: "https://www.figma.com/", image: "images/design2.jpg" },
-    { title: "Album Cover Concepts", meta: "Branding + photo edits", link: "https://your-site.com/", image: "images/design3.jpg" },
-    { title: "Motion Teaser", meta: "After Effects / Premiere", link: "https://your-site.com/", image: "images/design4.jpg" }
+    { title: "sheCodes Brand", meta: "Pink and inclusivity from Aug 2024 to May 2025.", image: "images/design/logo.png", link: "https://www.cppshecodes.com/" },
+    { title: "sheCodes Merch", meta: "Made club Merch from Aug 2024 to May 2025", image: "images/design/merch.png", link: "https://www.instagram.com/cppshecodes/" },
+    { title: "sheCodes Graphics", meta: "Social Media graphic designer from Aug 2024 to May 2025 ", link: "https://www.instagram.com/cppshecodes/", image: "images/design/graphics.png" },
   ],
 
   skills: {
@@ -308,13 +318,6 @@ function openProjectDetail(id){
       ${gallery}
 
       <div class="card" style="margin-top:12px;">
-        <h3 class="h3">What I did</h3>
-        <ul class="list">
-          <li>Designed the UX flow and visuals</li>
-          <li>Built core features + state</li>
-          <li>Focused on accessibility + clean UI</li>
-        </ul>
-        <p class="tiny muted">Customize this per project (add a <code>bullets</code> array if you want).</p>
       </div>
     </div>
   `;

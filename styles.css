@@ -4,7 +4,7 @@
   --ink:#1e1e1e;
   --muted:rgba(30,30,30,.70);
 
-  --green:#99ffad;
+  --green:#4fc11e8d;
   --pink:#f27697;
 
   --peach:#ffc0e7;
@@ -84,7 +84,7 @@ body{
   box-shadow: 0 0 0 3px rgba(255,79,216,.10);
 }
 .btn.primary:hover{
-  border-color: rgba(53,255,158,.45);
+  border-color: rgba(114, 255, 53, 0.227);
   box-shadow: 0 0 0 3px rgba(53,255,158,.10);
 }
 
@@ -112,7 +112,7 @@ body{
   border-radius:50%;
   transform: translate(-50%,-50%);
   background:
-    radial-gradient(circle at center, rgba(130, 255, 76, 0.649), transparent 60%),
+    radial-gradient(circle at center, rgba(130, 255, 76, 0.277), transparent 60%),
     radial-gradient(circle at center, rgba(124, 255, 53, 0.14), transparent 62%);
   filter: blur(14px);
   opacity:.55;
@@ -505,10 +505,9 @@ body.reduce-motion *{
 }
 
 /* COLLAGE */
-/* COLLAGE — Postcard Grid (3 × 2) */
 .collage{
   margin-top: 14px;
-  max-width: 1120px;           /* keeps it tight */
+  max-width: 1520px;          
   margin-left: auto;
   margin-right: auto;
 }
@@ -546,7 +545,7 @@ body.reduce-motion *{
 
 .polaroid img{
   width: 100%;
-  aspect-ratio: 4 / 3;        /* postcard */
+  aspect-ratio: 16 / 9;        /* postcard */
   object-fit: cover;
   border-radius: 12px;
   display: block;
