@@ -49,8 +49,8 @@ const DATA = {
       longDesc: ["This game is currently in-progress and has a placeholder name of Love Love Green Camp. This project takes heavy inpiration from early 2000's dating sims like Tokimeki Memorial Girl with its coming of age storyline/setting and playthrough structure.",
         "This is a solo development project, timeline to complete this project is TBD.",],
       images: [
-        "images/projects/datingsim/bell.png",
-        "images/projects/datingsim/startscreen.png"
+        "images/projects/datingsim/startscreen.png",
+        "images/projects/datingsim/playthrough.gif"
       ],
       links: { github: "https://github.com/qennya/lovelovegreencamp" }
     },
