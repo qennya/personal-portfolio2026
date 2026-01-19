@@ -47,12 +47,15 @@ const DATA = {
       stack: ["Android Studio","C++", "Dart", "Flutter"],
       desc: "Simple dating game created to learn game development and create art beyond a lecture hall!",
       longDesc: ["This game is currently in-progress and has a placeholder name of Love Love Green Camp. This project takes heavy inpiration from early 2000's dating sims like Tokimeki Memorial Girl with its coming of age storyline/setting and playthrough structure.",
-        "This is a solo development project, timeline to complete this project is TBD.",],
+        "This is a solo development project, meaning all art seen and assets are my own and created by me. Timeline to complete this project is TBD as a result.",],
       images: [
-        "images/projects/datingsim/startscreen.png",
-        "images/projects/datingsim/playthrough.gif"
+        "images/projects/datingsim/startingscreen.png",
+        "images/projects/datingsim/playthrough.gif",
+        "images/projects/datingsim/elias.gif"
       ],
-      links: { github: "https://github.com/qennya/lovelovegreencamp" }
+      links: { github: "https://github.com/qennya/lovelovegreencamp",
+        Figma: "https://www.figma.com/design/v9hjP7jCv5RanpfFJwkPXa/Love-Love-Green?node-id=0-1&t=mFwe9r7AganBeR7f-1"
+       }
     },
   ],
 
